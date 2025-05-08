@@ -5,6 +5,12 @@ const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const customerRoutes = require('./routes/customerRoutes');
 const organizationRoutes = require('./routes/organizationRoutes');
+const orderCustomerRoutes = require('./routes/orderCustomerRoutes');
+const cartRoutes = require('./routes/cartRoutes');
+const deliveryRoutes = require('./routes/deliveryRoutes');
+const replenishmentRoutes = require('./routes/replenishmentRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
+const paymentRoutes = require('./routes/paymentRoutes');
 require('dotenv').config();
 
 // Inisialisasi aplikasi Express
@@ -30,7 +36,12 @@ app.use('/api/auth', userRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/customers', customerRoutes);
 app.use('/api/organizations', organizationRoutes);
-
+app.use('/api/orders', orderCustomerRoutes);
+app.use('/api/cart', cartRoutes);
+app.use('/api/deliveries', deliveryRoutes);
+app.use('/api/replenishments', replenishmentRoutes);
+app.use('/api/notifications', notificationRoutes);
+app.use('/api/payments', paymentRoutes);
 
 // Rute sederhana untuk tes
 app.get('/', (req, res) => {

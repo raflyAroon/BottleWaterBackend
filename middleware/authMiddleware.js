@@ -36,8 +36,9 @@ const authMiddleware = {
                 });
             }
             
-            // Attach user to request object
+            // Attach user to request object - FIXED: Added id property to match what cart controller expects
             req.user = {
+                id: user.user_id, // Add this line to ensure compatibility with cart controller
                 user_id: user.user_id,
                 email: user.email,
                 role: user.role
